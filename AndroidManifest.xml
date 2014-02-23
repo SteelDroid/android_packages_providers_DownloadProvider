@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.providers.downloads"
-        android:sharedUserId="android.media">
+    package="com.android.providers.downloads"
+    android:sharedUserId="android.media">
 
     <!-- Allows access to the Download Manager -->
     <permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"
@@ -25,14 +25,14 @@
     <permission android:name="android.permission.DOWNLOAD_CACHE_NON_PURGEABLE"
         android:label="@string/permlab_downloadCacheNonPurgeable"
         android:description="@string/permdesc_downloadCacheNonPurgeable"
-        android:protectionLevel="signatureOrSystem"/>
+        android:protectionLevel="signatureOrSystem" />
 
     <!-- Allows to queue downloads without a notification shown while the download runs. -->
     <permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"
         android:permissionGroup="android.permission-group.NETWORK"
         android:label="@string/permlab_downloadWithoutNotification"
         android:description="@string/permdesc_downloadWithoutNotification"
-        android:protectionLevel="normal"/>
+        android:protectionLevel="normal" />
 
     <!-- Allows an app to access all downloads in the system via the /all_downloads/ URIs.  The
          protection level could be relaxed in the future to support third-party download
@@ -40,7 +40,7 @@
     <permission android:name="android.permission.ACCESS_ALL_DOWNLOADS"
         android:label="@string/permlab_accessAllDownloads"
         android:description="@string/permdesc_accessAllDownloads"
-        android:protectionLevel="signature"/>
+        android:protectionLevel="signature" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
@@ -61,13 +61,13 @@
           <!-- Anyone can access /my_downloads, the provider internally restricts access by UID for
                these URIs -->
           <path-permission android:pathPrefix="/my_downloads"
-                           android:permission="android.permission.INTERNET"/>
+                           android:permission="android.permission.INTERNET" />
           <!-- Temporary, for backwards compatibility -->
           <path-permission android:pathPrefix="/download"
-                           android:permission="android.permission.INTERNET"/>
+                           android:permission="android.permission.INTERNET" />
           <!-- Apps with access to /all_downloads/... can grant permissions, allowing them to share
                downloaded files with other viewers -->
-          <grant-uri-permission android:pathPrefix="/all_downloads/"/>
+          <grant-uri-permission android:pathPrefix="/all_downloads/" />
         </provider>
         <service android:name=".DownloadService"
                 android:permission="android.permission.ACCESS_DOWNLOAD_MANAGER" />
@@ -80,6 +80,6 @@
 
         <activity android:name=".SizeLimitActivity"
                   android:launchMode="singleTask"
-                  android:theme="@style/Theme.Translucent"/>
+                  android:theme="@style/Theme.Translucent" />
     </application>
 </manifest>
